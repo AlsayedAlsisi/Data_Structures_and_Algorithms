@@ -4,12 +4,13 @@
 * Version: 1.0
 * Contact: alsayed.alsisi@gmail.com
 * License:
-* You have the right to use the file as you wish in educational or commercial purposes under the following
+* You have the right to use the file as you wish in any educational or commercial purposes under the following
 * conditions:
-* - This file is to be used as is. No modifications are to be made to any part of the file, including this section.
-* - This section is not to be removed under any circumstances.
-* - Parts of the file may be used separately under the condition that are not modified, and preceded by this section.
-* - Any bug that is found in this file or parts of it should be reported to the email address given above.
+* [1] This file is to be used as is. No modifications are to be made to any part of the file, including this section.
+* [2] This section is not to be removed under any circumstances.
+* [3] Parts of the file may be used separately under the condition they are not modified, and preceded by this section.
+* [4] Any bug encountered in this file or parts of it should be reported to the email address given above to be fixed.
+* [5] No warranty is expressed or implied by the publication or distribution of this source code.
 *********************************************************************************************************************/
 /*********************************************************************************************************************
 * File Information:
