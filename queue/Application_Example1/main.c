@@ -74,12 +74,12 @@ static void display_task(void);
 ********************************************************************************************************************/
 int main(void)
 {
-	  uart_receiver_init();
+    uart_receiver_init();
     lcd_init();
 	
     while (1) 
     {
-		   display_task(); 
+	    display_task(); 
     }
 }
 
