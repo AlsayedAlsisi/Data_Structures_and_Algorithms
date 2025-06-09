@@ -1,44 +1,44 @@
-# Queue Implementation
+# Linked List Implementation
 
-A circular buffer implementation of a First-In-First-Out (FIFO) queue in C.
+A singly linked list implementation in C with dynamic memory allocation.
 
 ## Features
 
-- Fixed-size circular buffer
-- No dynamic memory allocation
-- Comprehensive error handling
-- 8-bit data elements (`uint8_t`)
+- Dynamic memory allocation
+- Integer data storage
+- Index-based operations
+- Comprehensive node management
 
 ## Functions
 
-- `queue_enqueue()` - Add element to rear
-- `queue_dequeue()` - Remove element from front
-- `queue_peek()` - View front element without removal
-- `queue_isEmpty()` - Check if queue is empty
-- `queue_isFull()` - Check if queue is full
+- `linkedlist_insert_end()` - Insert at end
+- `linkedlist_insert_index()` - Insert at specific index
+- `linkedlist_get_end()` - Get data from last node
+- `linkedlist_get_index()` - Get data from specific index
+- `linkedlist_delete_end()` - Delete last node
+- `linkedlist_delete_index()` - Delete node at index
+- `linkedlist_delete_all()` - Delete all nodes
 
 ## Quick Example
 
 ```c
-#include "queue.h"
-
-#define BUFFER_SIZE 10
-static uint8_t buffer[BUFFER_SIZE] = {0};
-static queue_t my_queue = {
-    .data_buffer = buffer,
-    .queue_size = BUFFER_SIZE,
-    .front_index = 0,
-    .rear_index = 0
-};
+#include "linkedlist.h"
 
 int main() {
-    uint8_t data = 65; // 'A'
+    // Create head node
+    struct node_t head = {10, NULL};
     
-    // Add data
-    queue_enqueue(&my_queue, data);
+    // Insert data
+    linkedlist_insert_end(&head, 20);
+    linkedlist_insert_end(&head, 30);
     
-    // Remove data
-    queue_dequeue(&my_queue, &data);
+    // Get data
+    int data;
+    linkedlist_get_index(&head, 1, &data);
+    printf("Data at index 1: %d\n", data);
+    
+    // Clean up
+    linkedlist_delete_all(&head);
     
     return 0;
 }
@@ -46,14 +46,13 @@ int main() {
 
 ## Return Values
 
-- `QUEUE_OPERATION_SUCCESSFUL` - Success
-- `QUEUE_IS_EMPTY` / `QUEUE_NOT_EMPTY` - Empty status
-- `QUEUE_IS_FULL` / `QUEUE_NOT_FULL` - Full status
+- `LINKEDLIST_OP_SUCCESS` - Operation successful
+- `LINKEDLIST_OP_FAIL` - Operation failed
 
 ## Project Example
 
-Includes a practical example that reads data from UART peripheral and displays it on LCD using the queue for buffering.
+Includes a practical example implementing a dynamic array using the linked list data structure.
 
 ## Time Complexity
 
-All operations: **O(1)**
+Most operations: **O(n)** (requires traversal)
